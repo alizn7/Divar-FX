@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.finaldivar.controller.NewListingController"
+            nodeOrientation="RIGHT_TO_LEFT"
+            style="-fx-background-color: #f9f9f9;">
+
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <top>
+        <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
+            <Label text="📝 ثبت آگهی جدید"
+                   style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-font-family: 'Tahoma'; -fx-text-fill: #2c3e50;" />
+            <Separator prefWidth="300"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="25" alignment="CENTER">
+            <GridPane hgap="15" vgap="20">
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="120" halignment="RIGHT"/>
+                    <ColumnConstraints prefWidth="320"/>
+                </columnConstraints>
+
+                <!-- عنوان -->
+                <Label text="عنوان آگهی:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           promptText="مثلاً فروش لپ‌تاپ"
+                           style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8;"/>
+
+                <!-- قیمت -->
+                <Label text="قیمت (تومان):" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <TextField fx:id="priceField" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           promptText="مثلاً ۱۲۳۴۵۶۷"
+                           style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8;"/>
+
+                <!-- دسته‌بندی -->
+                <Label text="دسته‌بندی:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <ComboBox fx:id="categoryComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                          promptText="انتخاب دسته"
+                          style="-fx-font-size: 14px; -fx-background-radius: 8;"/>
+
+                <!-- موقعیت -->
+                <Label text="موقعیت:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <TextField fx:id="locationField" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                           promptText="مثلاً تهران، جنت آباد"
+                           style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8;"/>
+
+                <!-- تماس -->
+                <Label text="اطلاعات تماس:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <TextField fx:id="contactInfoField" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                           promptText="شماره تماس یا ایمیل"
+                           style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8;"/>
+
+                <!-- تصویر -->
+                <Label text="تصویر:" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                    <TextField fx:id="imagePathField" promptText="مسیر تصویر..."
+                               style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8;"
+                               HBox.hgrow="ALWAYS"/>
+                    <Button text="انتخاب" onAction="#handleChooseImage"
+                            style="-fx-font-size: 13px; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                </HBox>
+
+                <!-- توضیحات -->
+                <Label text="توضیحات:" GridPane.rowIndex="6" GridPane.columnIndex="0" GridPane.valignment="TOP"
+                       style="-fx-font-size: 15px; -fx-font-family: 'Tahoma';"/>
+                <TextArea fx:id="descriptionArea"
+                          promptText="توضیحاتی درباره آگهی بنویسید..."
+                          wrapText="true" prefHeight="150"
+                          style="-fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 10;"
+                          GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10" alignment="CENTER" BorderPane.alignment="CENTER">
+            <Separator prefWidth="300"/>
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="📤 ثبت آگهی"
+                        onAction="#handleSubmit"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-family: 'Tahoma'; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+                <Button text="❌ انصراف"
+                        onAction="#handleCancel"
+                        style="-fx-font-size: 14px; -fx-font-family: 'Tahoma'; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10 20;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

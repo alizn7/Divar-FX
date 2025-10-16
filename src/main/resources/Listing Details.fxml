@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.finaldivar.controller.ListingController"
+            nodeOrientation="RIGHT_TO_LEFT"
+            style="-fx-background-color: linear-gradient(to bottom, #ffffff, #f8f9fa);">
+
+    <padding>
+        <Insets top="30" right="50" bottom="30" left="50"/>
+    </padding>
+
+    <!-- 🔷 Header -->
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <Label fx:id="titleLabel"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-font-family: 'IRANSans'; -fx-text-fill: #2c3e50;" />
+            <Separator style="-fx-background-color: #ddd;"/>
+        </VBox>
+    </top>
+
+    <!-- 📦 Main Content -->
+    <center>
+        <VBox spacing="30" nodeOrientation="RIGHT_TO_LEFT">
+
+            <!-- 🖼️ تصویر + اطلاعات آگهی -->
+            <HBox spacing="30" alignment="TOP_CENTER">
+                <ImageView fx:id="listingImageView" fitHeight="220" fitWidth="320" preserveRatio="true"
+                           style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0.3, 4, 4); -fx-background-radius: 10;" />
+
+                <VBox spacing="15">
+                    <HBox spacing="6">
+                        <Label text="💰 قیمت:"
+                               style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #333;" />
+                        <Label fx:id="priceLabel" style="-fx-font-size: 15px; -fx-text-fill: #555;" />
+                    </HBox>
+
+                    <HBox spacing="6">
+                        <Label text="📂 دسته‌بندی:"
+                               style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #333;" />
+                        <Label fx:id="categoryLabel" style="-fx-font-size: 15px; -fx-text-fill: #555;" />
+                    </HBox>
+
+                    <HBox spacing="6">
+                        <Label text="📍 موقعیت:"
+                               style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #333;" />
+                        <Label fx:id="locationLabel" style="-fx-font-size: 15px; -fx-text-fill: #555;" />
+                    </HBox>
+
+                    <HBox spacing="6">
+                        <Label text="📅 تاریخ:"
+                               style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #333;" />
+                        <Label fx:id="dateLabel" style="-fx-font-size: 15px; -fx-text-fill: #555;" />
+                    </HBox>
+
+                    <HBox spacing="6">
+                        <Label text="👤 فروشنده:"
+                               style="-fx-font-weight: bold; -fx-font-size: 15px; -fx-text-fill: #333;" />
+                        <Label fx:id="sellerLabel" style="-fx-font-size: 15px; -fx-text-fill: #555;" />
+                    </HBox>
+                </VBox>
+            </HBox>
+
+            <!-- ✍️ توضیحات -->
+            <VBox spacing="8">
+                <Label text="📝 توضیحات:"
+                       style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #2c3e50;" />
+                <TextArea fx:id="descriptionArea"
+                          editable="false"
+                          wrapText="true"
+                          prefHeight="150"
+                          style="-fx-font-size: 14px; -fx-background-radius: 10; -fx-padding: 10; -fx-control-inner-background: #fff; -fx-border-color: #ccc;" />
+            </VBox>
+
+            <!-- 📞 اطلاعات تماس -->
+            <VBox spacing="8">
+                <Label text="📞 اطلاعات تماس:"
+                       style="-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #2c3e50;" />
+                <Label fx:id="contactInfoLabel"
+                       style="-fx-font-size: 15px; -fx-text-fill: #555;" />
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- 🔙 دکمه بازگشت -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
+            <Separator prefWidth="400" />
+            <Button onAction="#handleBack" text="⬅ بازگشت"
+                    style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-font-family: 'IRANSans'; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 10; -fx-padding: 10 25;" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

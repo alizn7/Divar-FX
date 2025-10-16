@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.finaldivar.controller.MainController"
+            nodeOrientation="RIGHT_TO_LEFT"
+            style="-fx-background-color: linear-gradient(to bottom, #ffffff, #f9f9f9);">
+
+    <!-- 🔝 نوار بالایی: خوش‌آمدگویی + جستجو -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15 20 15 20;">
+            <!-- ✅ خوش آمدید + خروج -->
+            <HBox spacing="10" alignment="CENTER_RIGHT">
+                <Label fx:id="welcomeLabel"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="🚪 خروج"
+                        onAction="#handleLogout"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 8;" />
+            </HBox>
+
+            <!-- 🔍 نوار جستجو -->
+            <HBox spacing="10" alignment="CENTER" style="-fx-padding: 5 0 0 0;">
+                <TextField fx:id="searchField"
+                           promptText="جستجوی آگهی..."
+                           HBox.hgrow="ALWAYS"
+                           style="-fx-font-size: 14px; -fx-background-radius: 8;" />
+
+                <ComboBox fx:id="categoryComboBox"
+                          promptText="دسته‌بندی"
+                          style="-fx-font-size: 14px; -fx-background-radius: 8;" />
+
+                <Button text="🔎 جستجو"
+                        onAction="#handleSearch"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 8;" />
+
+                <Button text="➕ آگهی جدید"
+                        onAction="#handleNewListing"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 8;" />
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- 📄 لیست آگهی‌ها -->
+    <center>
+        <ListView fx:id="listingsListView"
+                  style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-radius: 8; -fx-padding: 10;" />
+    </center>
+
+    <!-- 🔻 نوار پایین -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 10 0 10 0;">
+            <Label text="دیوار - نسخه 1.0"
+                   style="-fx-font-size: 13px; -fx-text-fill: #888;" />
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" spacing="25" style="-fx-background-color: #fdfdfd;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.finaldivar.controller.LoginController">
+
+    <padding>
+        <Insets bottom="40" left="50" right="50" top="40" />
+    </padding>
+
+    <Label style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #FF5A5F;" text="دیوار - ورود / ثبت‌نام" />
+
+    <GridPane alignment="CENTER" hgap="15" nodeOrientation="RIGHT_TO_LEFT" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120" prefWidth="140" />
+            <ColumnConstraints minWidth="220" prefWidth="250" />
+        </columnConstraints>
+
+        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="نام کاربری:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="usernameField" promptText="نام کاربری خود را وارد کنید" style="-fx-padding: 8px; -fx-background-radius: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="رمز عبور:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="passwordField" promptText="رمز عبور" style="-fx-padding: 8px; -fx-background-radius: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label fx:id="phoneLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="شماره تلفن:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="phoneField" promptText="مثلاً 09123456789" style="-fx-padding: 8px; -fx-background-radius: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label fx:id="emailLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="ایمیل:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="emailField" promptText="مثلاً example@email.com" style="-fx-padding: 8px; -fx-background-radius: 5px;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+
+    <HBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" spacing="20">
+        <Button onAction="#handleLoginRegister" style="-fx-background-color: #FF5A5F; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10px 25px; -fx-background-radius: 8px;" text="ورود / ثبت‌نام" />
+        <Button onAction="#toggleMode" style="-fx-background-color: transparent; -fx-border-color: #FF5A5F; -fx-text-fill: #FF5A5F; -fx-font-weight: bold; -fx-padding: 10px 20px; -fx-background-radius: 8px;" text="ثبت نام جدید" />
+    </HBox>
+</VBox>
