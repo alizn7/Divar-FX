@@ -1,6 +1,6 @@
 # 🏠 DivarFX — AP Advanced Programming Workshop Project
 
-**DivarFX** is a simple, JavaFX-based desktop application for **classified ads**, developed as a **course project** for the *Advanced Programming Workshop (AP)* course at the **University of Isfahan** — *Winter 2023*.  
+**DivarFX** is a simple, JavaFX-based desktop application for **classified ads**, developed as a **course project** for the *Advanced Programming Workshop (AP)* course at the **University of Isfahan** — *Winter 2024*.  
 
 This project follows a clean **Model–View–Controller (MVC)** architecture and applies basic **OOP principles** for modularity and maintainability.
 
